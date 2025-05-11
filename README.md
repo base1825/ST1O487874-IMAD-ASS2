@@ -33,4 +33,36 @@ parallel arrays are used for this logic
 An appropriate feedback is displayed based on performances.
 a review button allows the user to go through all questions and answers. 
 and an "EXIT " button that ends the app.
-## HOW TO INSTALL AND RUN THE PROJECT
+
+## HOW TO USE THE APP
+ 1.install Android studio
+ -download and install android studio
+ - launch android studio
+ - open the project
+   2. build the App
+   -let Android studio download any required dependencies
+   -click build , make project
+   3. Run the APP
+   -connect an android device via USB or start an emulator
+   -click the RUN button
+   -select the device/emulator to launch the app
+   -start using the quiz.
+   ## GitHub Actions and Github
+   This project uses GitHub Actions to automates the  build and test process.
+   every time code is opened , github Actions automatically :
+   -Checks out the latest code
+   -builds the project using gradle
+   -Runs tests to ensure everything works as expected.
+ This project is managed using to track changes in the codebase
+A central place to collaborate, manage issues, and review code
+integration with tools like github for automating builds,tests,and deployments.
+## DESIGN CONSIDERATIONS
+the app runs on a cozy screen that makes wanna interact with it 
+the second screen is a white screen that makes the think .
+the third screen is where the score is displayed on a cheerful  bright and fun screen
+   
+   
+   
+   
+   
+   
