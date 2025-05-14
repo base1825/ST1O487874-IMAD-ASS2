@@ -6,20 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/img"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/txeWelcome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="WELCOME" />
+        android:layout_height="57dp"
+        android:text="WELCOME"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txeExpli"
         android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:text="test your knolegde.flip througt questions and get your score"
-        />
+        android:layout_height="79dp"
+        android:text="test your knowlegde.flip througt questions and get your score"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button"

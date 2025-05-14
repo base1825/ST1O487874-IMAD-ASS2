@@ -41,12 +41,13 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         // Initialize UI elements
-        questionTextView = findViewById(R.id.questionTextView)
-        feedbackTextView = findViewById(R.id.feedbackTextView)
-        nextButton = findViewById(R.id.nextButton)
-        trueButton = findViewById(R.id.trueButton)
-        falseButton = findViewById(R.id.falseButton)
-        timerTextView = findViewById(R.id.timerTextView)
+        questionTextView = findViewById<TextView>(R.id.questionTextView)
+        feedbackTextView = findViewById<TextView>(R.id.feedbackTextView)
+        nextButton = findViewById<Button>(R.id.nextButton)
+        trueButton = findViewById<Button>(R.id.trueButton)
+        falseButton = findViewById<Button>(R.id.falseButton)
+        timerTextView = findViewById<TextView>(R.id.timerTextView)
+        nextButton = findViewById<Button>(R.id.nextButton)
 
         // Disable Next button initially
         nextButton.isEnabled = false
