@@ -12,19 +12,22 @@
         android:id="@+id/questionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="here question" />
+        android:text="here question"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/feedbackTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="your feedback" />
+        android:text="your feedback"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/timerTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="time" />
+        android:text="time"
+        android:textSize="24sp" />
 
 
     <Button
