@@ -1,10 +1,11 @@
 ### ST10487874/FLASH QUIZ APP
 ##DESCRIPTION
 this is a simple True/False flashcard-style quiz app .Users are presented with a welcome screen and,upon starting,go through
-a series of five questions to test their knowledge.Each question is worth one point, and users receive immediate feedback on their answers.
+a series of five questions to test their knowledge.Each question is worth one point, and users receive immediate feedback on their answers. the app also enclude a 5 second timer.
 ## FEATURES
 the app run with a welcome screen with a "start" button 
 5 question flashcard quiz
+set timer
 true/false interaction 
 score tracking
 ### APP LOGIC 
@@ -21,13 +22,14 @@ parallel arrays are used for this logic
  a loop iterates through all five questions
  for each iteration
  1. the current question is displayed on screen
- 2. the user selects"true" or "false" by clicking the respective button.
- 3. the app compares the user's response with the correct answer
- 4. instant feedback is displayed :
+ 2. a timer counts down from 5 
+ 3. the user selects"true" or "false" by clicking the respective button.
+ 4. the app compares the user's response with the correct answer
+ 5. instant feedback is displayed :
     -"correct" : if the correct matches.
     -"incorrect" : if it does not.
-5. the score counter is incremented after each question
-6. the app proceeds to the next question
+6. the score counter is incremented after each question
+7. the app proceeds to the next question
 
 ## 3.SCORE SCREEN LOGIC
 An appropriate feedback is displayed based on performances.
@@ -58,8 +60,12 @@ A central place to collaborate, manage issues, and review code
 integration with tools like github for automating builds,tests,and deployments.
 ## DESIGN CONSIDERATIONS
 the app runs on a cozy screen that makes wanna interact with it 
-the second screen is a white screen that makes the think .
+the second screen is a white screen that makes the user  think, and helps create an clear and distraction free enviroment 
 the third screen is where the score is displayed on a cheerful  bright and fun screen
+Bright colors, playful visuals, or animations are used to uplift the user’s mood, creating a positive vibe
+ and joy to the user experience, making the app more enjoyable and memorable.
+ ## links and screenshots
+ 
    
    
    
