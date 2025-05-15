@@ -98,19 +98,21 @@ class SecondActivity : AppCompatActivity() {
         nextButton.isEnabled = true
     }
 
-    private fun moveToNextQuestion() = if (currentQuestionIndex < questions.size - 1) {
-        currentQuestionIndex++
-        showQuestion() // Show the next question
-        feedbackTextView.text = "" // Clear the feedback
-        nextButton.isEnabled = false // Disable Next button until an answer is given
-    } else {
-        // After the last question, go to the results activity
-        val intent = Intent(this, ActivityResultat:: class.java)
+    private fun moveToNextQuestion() {
+        if (currentQuestionIndex < questions.size - 1) {
+            currentQuestionIndex++
+            showQuestion()
+            feedbackTextView.text = ""
+            nextButton.isEnabled = false
+        } else {
+            val intent = Intent(this, result_Activity::class.java)
+            intent.putExtra("score", score)
+            intent.putStringArrayListExtra("correctAnswers", ArrayList(correctAnswersGiven))
+            intent.putStringArrayListExtra("questions", ArrayList(questions.toList()))
             startActivity(intent)
-            intent.putExtra("score", score)  // Pass the score
-            intent.putStringArrayListExtra("correctAnswers", ArrayList(correctAnswersGiven)) // Pass the list of correct answers
-        val questions = intent.getStringArrayListExtra("questions")
-
+        }
     }
 }
+
+
 
