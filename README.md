@@ -37,14 +37,14 @@ a review button allows the user to go through all questions and answers.
 and an "EXIT " button that ends the app.
 
 ## HOW TO USE THE APP
- 1.install Android studio
+ 1.  install Android studio
  -download and install android studio
  - launch android studio
  - open the project
-   2. build the App
+   2.   build the App
    -let Android studio download any required dependencies
    -click build , make project
-   3. Run the APP
+   3.  Run the APP
    -connect an android device via USB or start an emulator
    -click the RUN button
    -select the device/emulator to launch the app
@@ -65,6 +65,8 @@ the third screen is where the score is displayed on a cheerful  bright and fun s
 Bright colors, playful visuals, or animations are used to uplift the user’s mood, creating a positive vibe
  and joy to the user experience, making the app more enjoyable and memorable.
  ## links and screenshots
+ use this link to assess my repository
+ https://github.com/base1825/ST1O487874-IMAD-ASS2.git
  
    
    
