@@ -29,6 +29,7 @@ class result_Activity : AppCompatActivity() {
 // Retrieve the score and correct answers list
             val score = intent.getIntExtra("score", 0)
             val correctAnswersList = intent.getStringArrayListExtra("correctAnswers")
+            val questions = intent.getStringArrayListExtra("question")
 
 // Display the score
             scoreTextView.text = "Your score: $score"
@@ -40,17 +41,23 @@ class result_Activity : AppCompatActivity() {
             reviewTextView.visibility = View.GONE
 
 // Review button logic
-            reviewButton.setOnClickListener {
-                if (correctAnswersList != null && correctAnswersList.isNotEmpty()) {
-                    val correctAnswersString = correctAnswersList.joinToString("\n") { "✔ $it" }
-                    reviewTextView.text = "Correct Answers:\n$correctAnswersString"
-                } else {
-                    reviewTextView.text = "No correct answers"
+        reviewButton.setOnClickListener {
+            if (!questions.isNullOrEmpty() && !correctAnswersList.isNullOrEmpty()) {
+                val reviewText = StringBuilder("Review:\n\n")
+                for (i in questions.indices) {
+                    val question = questions [i]
+                    val correctAnswer = if (i < correctAnswersList.size) correctAnswersList[i] else "N/A"
+                    reviewText.append("Q: $question\n✔ A: $correctAnswer\n\n")
                 }
-                reviewTextView.visibility = View.VISIBLE
+                reviewTextView.text = reviewText.toString()
+            } else {
+                reviewTextView.text = "No questions or answers to review."
             }
+            reviewTextView.visibility = View.VISIBLE
+        }
 
-            exitButton.setOnClickListener {
+
+        exitButton.setOnClickListener {
                 finish()
             }
     }

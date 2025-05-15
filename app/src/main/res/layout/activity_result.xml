@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/completionTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="QUIZ COMPLETE"
         android:textColor="@android:color/holo_green_light"
         android:textStyle="bold" />
@@ -20,14 +20,14 @@
     <TextView
         android:id="@+id/scoreTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="46dp"
         android:fontFamily="sans-serif-black"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/reviewTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="TextView" />
     <Button
         android:id="@+id/reviewButton"
