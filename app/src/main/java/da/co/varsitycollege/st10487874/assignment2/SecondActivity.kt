@@ -105,11 +105,12 @@ class SecondActivity : AppCompatActivity() {
         nextButton.isEnabled = false // Disable Next button until an answer is given
     } else {
         // After the last question, go to the results activity
-        val intent = Intent(this, ActivityResultat::class.java)
+        val intent = Intent(this, ActivityResultat:: class.java)
             startActivity(intent)
             intent.putExtra("score", score)  // Pass the score
             intent.putStringArrayListExtra("correctAnswers", ArrayList(correctAnswersGiven)) // Pass the list of correct answers
-            intent.putExtra("questions", questions)
+        val questions = intent.getStringArrayListExtra("questions")
+
     }
 }
 
