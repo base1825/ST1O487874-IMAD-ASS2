@@ -70,7 +70,15 @@ Bright colors, playful visuals, or animations are used to uplift the user’s mo
  
    
    
-   
-   
-   
-   
+   ![welcome screen](https://github.com/user-attachments/assets/805f7afe-4e3d-4ca9-a784-bcabac29986f)
+
+   ![Screensh![Screenshot 2025-05-15 220800](https://github.com/user-attachments/ass![Screenshot 2025-05-15 221227](https://github.com/user-attachments/assets/e5893d75-78fc-4707-8b69-b01cd5a3579a)
+ets/6d641b45-5619-48be-9ebb-ee83f1a68a48)
+ot 2025-05-15 220611](https://github.com/user-attachments/assets/e41f6fed-9b76-4e8b-922b-e302a3d33930)
+
+   ![Screenshot 2025-05-15 221911](https://github.com/user-attachments/assets/dfb98587-5ddc-4b03-9039-27b3b30fe441)
+
+   ![Screenshot 2025-05-15 222013](https://github.com/user-attachments/assets/3f91![secondActivity code](https://github.com/user-attachments/assets/336771a9-6e12-4707-ad58-a2198dede637)
+1e37-87d2-4045-9847-3122b9e7bb9e)
+
+![Screenshot 2025-05-15 222108](https://github.com/user-attachments/assets/7303971d-b655-46a0-97b7-5fc44227ffd1)
