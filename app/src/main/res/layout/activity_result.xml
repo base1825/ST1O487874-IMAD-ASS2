@@ -13,8 +13,9 @@
         android:id="@+id/completionTextView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="QUIZ COMPLETE"
+        android:text="QUIZ COMPLETED"
         android:textColor="@android:color/holo_green_light"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
@@ -22,13 +23,26 @@
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:fontFamily="sans-serif-black"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/fedback"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
 
     <TextView
         android:id="@+id/reviewTextView"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="TextView" />
+        android:layout_height="268dp"
+        android:text="TextView"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="14sp" />
     <Button
         android:id="@+id/reviewButton"
         android:layout_width="match_parent"

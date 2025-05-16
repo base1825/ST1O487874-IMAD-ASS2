@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.findViewTreeViewModelStoreOwner
 
 class result_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,11 +26,14 @@ class result_Activity : AppCompatActivity() {
             val reviewButton = findViewById<Button>(R.id.reviewButton)
             val completionTextView = findViewById<TextView>(R.id.completionTextView)
             val exitButton = findViewById<Button>(R.id.exitButton)
+            val fedback = findViewById<TextView>(R.id.fedback)
 
 // Retrieve the score and correct answers list
-            val score = intent.getIntExtra("score", 0)
-            val correctAnswersList = intent.getStringArrayListExtra("correctAnswers")
-            val questions = intent.getStringArrayListExtra("question")
+        val score = intent.getIntExtra("score", 0)
+        val correctAnswersList = intent.getStringArrayListExtra("correctAnswersGiven")
+        val questions = intent.getStringArrayListExtra("questions")
+        val correctAnswersAll = intent.getStringArrayListExtra("correctAnswersAll")
+
 
 // Display the score
             scoreTextView.text = "Your score: $score"
@@ -39,26 +43,34 @@ class result_Activity : AppCompatActivity() {
 
 // Hide review text view initially
             reviewTextView.visibility = View.GONE
+        if (score > 3) {
+            fedback.text = "🎉  Congratulatessss, you're really doing good."
+        } else {
+            fedback.text = "💡 not so bad, just need to practice more"
+        }
+
 
 // Review button logic
         reviewButton.setOnClickListener {
             if (!questions.isNullOrEmpty() && !correctAnswersList.isNullOrEmpty()) {
-                val reviewText = StringBuilder("Review:\n\n")
+                val reviewText = StringBuilder("✅ Réponses correctes :\n\n")
                 for (i in questions.indices) {
-                    val question = questions [i]
-                    val correctAnswer = if (i < correctAnswersList.size) correctAnswersList[i] else "N/A"
-                    reviewText.append("Q: $question\n✔ A: $correctAnswer\n\n")
+                    val question = questions[i]
+                    val correctAnswer = correctAnswersList[i]
+                    reviewText.append("Q: $question\n✔ Réponse correcte : $correctAnswer\n\n")
                 }
                 reviewTextView.text = reviewText.toString()
             } else {
-                reviewTextView.text = "No questions or answers to review."
+                reviewTextView.text = "⚠️ Missing data to display review."
             }
             reviewTextView.visibility = View.VISIBLE
         }
 
 
+
+
         exitButton.setOnClickListener {
-                finish()
+                finishAffinity()
             }
     }
 }

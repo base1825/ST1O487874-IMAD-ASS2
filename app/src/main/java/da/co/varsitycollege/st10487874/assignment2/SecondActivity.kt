@@ -107,9 +107,11 @@ class SecondActivity : AppCompatActivity() {
         } else {
             val intent = Intent(this, result_Activity::class.java)
             intent.putExtra("score", score)
-            intent.putStringArrayListExtra("correctAnswers", ArrayList(correctAnswersGiven))
+            intent.putStringArrayListExtra("correctAnswersGiven", ArrayList(correctAnswersGiven))
             intent.putStringArrayListExtra("questions", ArrayList(questions.toList()))
+            intent.putStringArrayListExtra("correctAnswersAll", ArrayList(correctAnswers.toList()))
             startActivity(intent)
+
         }
     }
 }
