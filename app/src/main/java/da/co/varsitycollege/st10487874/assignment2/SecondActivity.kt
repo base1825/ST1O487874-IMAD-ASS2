@@ -3,7 +3,7 @@ package da.co.varsitycollege.st10487874.assignment2
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.view.View
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +12,7 @@ class SecondActivity : AppCompatActivity() {
 
     val questions = arrayOf(
         "Is Milan the capital of France?",
-        "The Earth is flat?",
+        "is the Earth flat?",
         "1960 is the correct independence year of DRC?",
         "Is Brazil a country?",
         "Human body has 104 muscles?"
@@ -24,7 +24,7 @@ class SecondActivity : AppCompatActivity() {
 
     var currentQuestionIndex = 0
     var score = 0
-    val correctAnswersGiven = mutableListOf<String>()  // List to store correct answers
+    val correctAnswersGiven = mutableListOf<String>()
 
     lateinit var timer: CountDownTimer
 
@@ -41,60 +41,76 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         // Initialize UI elements
-        questionTextView = findViewById<TextView>(R.id.questionTextView)
-        feedbackTextView = findViewById<TextView>(R.id.feedbackTextView)
-        nextButton = findViewById<Button>(R.id.nextButton)
-        trueButton = findViewById<Button>(R.id.trueButton)
-        falseButton = findViewById<Button>(R.id.falseButton)
-        timerTextView = findViewById<TextView>(R.id.timerTextView)
-        nextButton = findViewById<Button>(R.id.nextButton)
+        questionTextView = findViewById(R.id.questionTextView)
+        feedbackTextView = findViewById(R.id.feedbackTextView)
+        nextButton = findViewById(R.id.nextButton)
+        trueButton = findViewById(R.id.trueButton)
+        falseButton = findViewById(R.id.falseButton)
+        timerTextView = findViewById(R.id.timerTextView)
 
         // Disable Next button initially
         nextButton.isEnabled = false
 
-        // Set up button listeners
+        // Log all questions (debugging)
+        for (i in questions.indices) {
+            Log.d("SecondActivity", "Question ${i + 1}: ${questions[i]}")
+        }
+
+        // Button listeners
         trueButton.setOnClickListener { handleAnswer("true") }
         falseButton.setOnClickListener { handleAnswer("false") }
         nextButton.setOnClickListener { moveToNextQuestion() }
 
-        // Show the first question
+        // Show first question
         showQuestion()
     }
 
     private fun showQuestion() {
-        // Show the current question and start the timer
+        // Display question
         questionTextView.text = questions[currentQuestionIndex]
+        feedbackTextView.text = ""
 
-        // Start the countdown timer
-        timer = object : CountDownTimer(5000, 1000) { // 5 seconds
+        // Re-enable answer buttons
+        trueButton.isEnabled = true
+        falseButton.isEnabled = true
+
+        // Disable next button until answer or timeout
+        nextButton.isEnabled = false
+
+        // Start countdown
+        timer = object : CountDownTimer(5000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 timerTextView.text = "Time left: ${millisUntilFinished / 1000}s"
             }
 
             override fun onFinish() {
-                // Time's up, automatically move to the next question
                 feedbackTextView.text = "⏳ Time's up!"
-                nextButton.isEnabled = true // Enable the Next button after time's up
+                trueButton.isEnabled = false
+                falseButton.isEnabled = false
+                nextButton.isEnabled = true
             }
         }
         timer.start()
     }
 
     private fun handleAnswer(answer: String) {
-        // Stop the timer when an answer is selected
+        // Stop the timer when answered
         timer.cancel()
 
-        // Check if the user's answer is correct
+        // Disable answer buttons
+        trueButton.isEnabled = false
+        falseButton.isEnabled = false
+
+        // Check answer
         if (answer == correctAnswers[currentQuestionIndex]) {
             score++
             feedbackTextView.text = "✅ Correct!"
-            // Add the question to the list of correct answers
             correctAnswersGiven.add(questions[currentQuestionIndex])
         } else {
             feedbackTextView.text = "❌ Incorrect!"
         }
 
-        // Enable the Next button after answering
+        // Enable next button
         nextButton.isEnabled = true
     }
 
@@ -102,8 +118,6 @@ class SecondActivity : AppCompatActivity() {
         if (currentQuestionIndex < questions.size - 1) {
             currentQuestionIndex++
             showQuestion()
-            feedbackTextView.text = ""
-            nextButton.isEnabled = false
         } else {
             val intent = Intent(this, result_Activity::class.java)
             intent.putExtra("score", score)
@@ -111,10 +125,6 @@ class SecondActivity : AppCompatActivity() {
             intent.putStringArrayListExtra("questions", ArrayList(questions.toList()))
             intent.putStringArrayListExtra("correctAnswersAll", ArrayList(correctAnswers.toList()))
             startActivity(intent)
-
         }
     }
 }
-
-
-
