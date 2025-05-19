@@ -43,7 +43,7 @@ class result_Activity : AppCompatActivity() {
 
 // Hide review text view initially
             reviewTextView.visibility = View.GONE
-        if (score > 3) {
+        if (score >= 3) {
             fedback.text = "🎉  Congratulatessss, you're really doing good."
         } else {
             fedback.text = "💡 not so bad, just need to practice more"
